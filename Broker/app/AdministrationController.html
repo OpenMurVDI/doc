@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class AdministrationController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/administration_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-check_file">#check_file</a>
+    
+    <li><a href="#method-i-create_users">#create_users</a>
+    
+    <li><a href="#method-i-delete_user">#delete_user</a>
+    
+    <li><a href="#method-i-edit_user">#edit_user</a>
+    
+    <li><a href="#method-i-list_groups">#list_groups</a>
+    
+    <li><a href="#method-i-list_users">#list_users</a>
+    
+    <li><a href="#method-i-toggle_approved_user">#toggle_approved_user</a>
+    
+    <li><a href="#method-i-update_user">#update_user</a>
+    
+    <li><a href="#method-i-upload_csv">#upload_csv</a>
+    
+    <li><a href="#method-i-users_from_group">#users_from_group</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AdministrationController.html">AdministrationController</a>
+  
+    <li><a href="./AdministrationControllerPolicy.html">AdministrationControllerPolicy</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ApplicationPolicy.html">ApplicationPolicy</a>
+  
+    <li><a href="./Cloud.html">Cloud</a>
+  
+    <li><a href="./CloudServer.html">CloudServer</a>
+  
+    <li><a href="./CloudServerPolicy.html">CloudServerPolicy</a>
+  
+    <li><a href="./CloudServersController.html">CloudServersController</a>
+  
+    <li><a href="./Image.html">Image</a>
+  
+    <li><a href="./ImagePolicy.html">ImagePolicy</a>
+  
+    <li><a href="./ImagesController.html">ImagesController</a>
+  
+    <li><a href="./Machine.html">Machine</a>
+  
+    <li><a href="./MachinePolicy.html">MachinePolicy</a>
+  
+    <li><a href="./MachinesController.html">MachinesController</a>
+  
+    <li><a href="./Role.html">Role</a>
+  
+    <li><a href="./RolePolicy.html">RolePolicy</a>
+  
+    <li><a href="./RolesController.html">RolesController</a>
+  
+    <li><a href="./StartMachine.html">StartMachine</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserPolicy.html">UserPolicy</a>
+  
+    <li><a href="./WelcomeController.html">WelcomeController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class AdministrationController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_file</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_file-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_file</span>
+  <span class="ruby-comment"># We check the file:</span>
+  <span class="ruby-comment">#  * CSV file structure.</span>
+  <span class="ruby-comment">#  * The users in the file MUST NOT exist.</span>
+  <span class="ruby-comment">#  * The users MUST NOT be repeated in the file.</span>
+  <span class="ruby-comment">#  * The role field format MUST BE correct.</span>
+  <span class="ruby-comment">#  * The roles MUST exist.</span>
+
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:upload</span>]
+
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_upload_csv_path</span>, <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;No file provided, upload a right file!!&quot;</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@CSV_errors</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@data_errors</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@role_errors</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">my_file</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:upload</span>]
+  <span class="ruby-ivar">@users</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">line_number</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@users_to_create</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@file_is_correct</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">my_file</span>.<span class="ruby-identifier">path</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">row</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">shift</span>
+        <span class="ruby-identifier">error</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">email</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">email</span><span class="ruby-operator">:</span> <span class="ruby-identifier">email</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+          <span class="ruby-ivar">@data_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;line #{line_number}: the mail #{email} already exists&quot;</span>
+          <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">email</span>)
+          <span class="ruby-ivar">@data_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;line #{line_number}: the mail #{email} is repeated&quot;</span>
+          <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@users</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">email</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">roles</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>)
+        <span class="ruby-identifier">roles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">role</span> = <span class="ruby-constant">Role</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">r</span>) 
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">role</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-ivar">@role_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;line #{line_number}: the role #{r} doesn&#39;t exist&quot;</span>
+            <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">line_number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">error</span>
+          <span class="ruby-ivar">@users_to_create</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">CSV</span><span class="ruby-operator">::</span><span class="ruby-constant">MalformedCSVError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-ivar">@CSV_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;CSV error in line #{line_number}&quot;</span>
+        <span class="ruby-identifier">line_number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>   
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@CSV_errors</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@data_errors</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@role_errors</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@file_is_correct</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;#{Rails.root}/tmp/&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">8</span>).<span class="ruby-identifier">map</span> { (<span class="ruby-value">65</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">26</span>)).<span class="ruby-identifier">chr</span> }.<span class="ruby-identifier">join</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-identifier">my_file</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">session</span>[<span class="ruby-value">:my_file</span>] = <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_file-method -->
+
+    
+      <div id="method-i-create_users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_users</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_users-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_users</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@my_file</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:my_file</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@my_file</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_upload_csv_path</span>, <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;You must provide a CSV file&quot;</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:my_file</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@users_created</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">line_number</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">User</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@my_file</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">row</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">shift</span>
+            <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">email</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">last_name</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">1</span>]
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">first_name</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">2</span>]
+            <span class="ruby-identifier">roles</span> = <span class="ruby-identifier">row</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+            <span class="ruby-identifier">roles</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">role_to_find</span> = <span class="ruby-constant">Role</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">r</span>)
+              <span class="ruby-identifier">user</span>.<span class="ruby-identifier">roles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">role_to_find</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">temp_password</span> = (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">8</span>).<span class="ruby-identifier">map</span> { (<span class="ruby-value">65</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">26</span>)).<span class="ruby-identifier">chr</span> }.<span class="ruby-identifier">join</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">password</span> = <span class="ruby-identifier">temp_password</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">password_confirmation</span> = <span class="ruby-identifier">temp_password</span>
+            <span class="ruby-identifier">line_number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>    
+            <span class="ruby-comment">#user.confirm!</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">confirmed_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">approved</span> = <span class="ruby-keyword">true</span>
+            <span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
+            <span class="ruby-ivar">@users_created</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">CSV</span><span class="ruby-operator">::</span><span class="ruby-constant">MalformedCSVError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+            <span class="ruby-comment"># This will never happen</span>
+            <span class="ruby-ivar">@CSV_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;CSV error in line #{line_number}&quot;</span>
+            <span class="ruby-identifier">line_number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">raise</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-ivar">@error</span> = <span class="ruby-string">&quot;Transaction aborted&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">remove_file</span>(<span class="ruby-ivar">@my_file</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;#{@users_created} #{&#39;user&#39;.pluralize(@users_created)} created&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_users-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_users-method -->
+
+    
+      <div id="method-i-delete_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_user</span> 
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">authorize</span> <span class="ruby-ivar">@user</span>
+  <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_list_users_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_user-method -->
+
+    
+      <div id="method-i-edit_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_user</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit_user-method -->
+
+    
+      <div id="method-i-list_groups" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_groups</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_groups-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_groups</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@groups</span> = <span class="ruby-constant">Role</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_groups-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_groups-method -->
+
+    
+      <div id="method-i-list_users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_users</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_users-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_users</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@users</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_users-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_users-method -->
+
+    
+      <div id="method-i-toggle_approved_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">toggle_approved_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="toggle_approved_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">toggle_approved_user</span> 
+   <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+   <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+   <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">toggle_approved!</span>
+   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">save</span>
+     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_list_users_path</span>
+   <span class="ruby-keyword">else</span>
+     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_list_users_path</span>, <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Error updating approvation&quot;</span>
+   <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">end</span></pre>
+          </div><!-- toggle_approved_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- toggle_approved_user-method -->
+
+    
+      <div id="method-i-update_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_user</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_user-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_user</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">user_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_list_users_path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">administration_list_users_path</span>, <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Error updating user&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_user-method -->
+
+    
+      <div id="method-i-upload_csv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_csv</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="upload_csv-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_csv</span>
+  <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_csv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_csv-method -->
+
+    
+      <div id="method-i-users_from_group" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_from_group</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="users_from_group-source">
+            <pre><span class="ruby-comment"># File app/controllers/administration_controller.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_from_group</span>
+ <span class="ruby-identifier">authorize</span> <span class="ruby-keyword">self</span>
+ <span class="ruby-ivar">@role</span> = <span class="ruby-constant">Role</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+ <span class="ruby-ivar">@users</span> = <span class="ruby-ivar">@role</span>.<span class="ruby-identifier">users</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- users_from_group-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- users_from_group-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class AdministrationControllerPolicy - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/policies/administration_controller_policy.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-check_file-3F">#check_file?</a>
+    
+    <li><a href="#method-i-create_users-3F">#create_users?</a>
+    
+    <li><a href="#method-i-edit_user-3F">#edit_user?</a>
+    
+    <li><a href="#method-i-list_groups-3F">#list_groups?</a>
+    
+    <li><a href="#method-i-list_users-3F">#list_users?</a>
+    
+    <li><a href="#method-i-toggle_approved_user-3F">#toggle_approved_user?</a>
+    
+    <li><a href="#method-i-update_user-3F">#update_user?</a>
+    
+    <li><a href="#method-i-upload_csv-3F">#upload_csv?</a>
+    
+    <li><a href="#method-i-users_from_group-3F">#users_from_group?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AdministrationController.html">AdministrationController</a>
+  
+    <li><a href="./AdministrationControllerPolicy.html">AdministrationControllerPolicy</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ApplicationPolicy.html">ApplicationPolicy</a>
+  
+    <li><a href="./Cloud.html">Cloud</a>
+  
+    <li><a href="./CloudServer.html">CloudServer</a>
+  
+    <li><a href="./CloudServerPolicy.html">CloudServerPolicy</a>
+  
+    <li><a href="./CloudServersController.html">CloudServersController</a>
+  
+    <li><a href="./Image.html">Image</a>
+  
+    <li><a href="./ImagePolicy.html">ImagePolicy</a>
+  
+    <li><a href="./ImagesController.html">ImagesController</a>
+  
+    <li><a href="./Machine.html">Machine</a>
+  
+    <li><a href="./MachinePolicy.html">MachinePolicy</a>
+  
+    <li><a href="./MachinesController.html">MachinesController</a>
+  
+    <li><a href="./Role.html">Role</a>
+  
+    <li><a href="./RolePolicy.html">RolePolicy</a>
+  
+    <li><a href="./RolesController.html">RolesController</a>
+  
+    <li><a href="./StartMachine.html">StartMachine</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserPolicy.html">UserPolicy</a>
+  
+    <li><a href="./WelcomeController.html">WelcomeController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class AdministrationControllerPolicy</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-ctrl" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ctrl</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-user" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">user</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(user, ctrl)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">ctrl</span>)
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">user</span>
+  <span class="ruby-ivar">@ctrl</span> = <span class="ruby-identifier">ctrl</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_file?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_file-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_file?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_file-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_file-3F-method -->
+
+    
+      <div id="method-i-create_users-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_users?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_users-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_users?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_users-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_users-3F-method -->
+
+    
+      <div id="method-i-edit_user-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_user?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_user-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_user?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit_user-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit_user-3F-method -->
+
+    
+      <div id="method-i-list_groups-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_groups?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_groups-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_groups?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_groups-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_groups-3F-method -->
+
+    
+      <div id="method-i-list_users-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_users?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_users-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_users?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_users-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_users-3F-method -->
+
+    
+      <div id="method-i-toggle_approved_user-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">toggle_approved_user?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="toggle_approved_user-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">toggle_approved_user?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- toggle_approved_user-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- toggle_approved_user-3F-method -->
+
+    
+      <div id="method-i-update_user-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_user?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_user-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_user?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_user-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_user-3F-method -->
+
+    
+      <div id="method-i-upload_csv-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_csv?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="upload_csv-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_csv?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_csv-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_csv-3F-method -->
+
+    
+      <div id="method-i-users_from_group-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_from_group?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="users_from_group-3F-source">
+            <pre><span class="ruby-comment"># File app/policies/administration_controller_policy.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_from_group?</span>
+  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">admin?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- users_from_group-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- users_from_group-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

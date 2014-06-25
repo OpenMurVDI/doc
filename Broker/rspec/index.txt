@@ -1,0 +1,321 @@
+
+MachinesController
+  as admin
+    GET index
+      assigns all machines as @machines
+    GET show
+      assigns the requested machine as @machine if machine belongs to the user
+    GET reboot
+      reboots a machine
+  as user
+    DELETE destroy
+      rescue connection refused
+      rescue type error
+      rescue timeout error
+      destroys the requested machine
+    POST create
+      creates a new Machine
+      user has a new machine assigned
+      redirects to a paused machine
+    GET show
+      assigns the requested machine as @machine if machine belongs to the user
+      return an unauthorized error if the requested machine doesn't belongs to the user
+    GET index
+      get an unauthorized error
+
+Machine
+  should belong to image
+  should belong to user
+  cloud_server
+    returns image.cloud_server
+  unpause
+    call machine.cloud_server unpause
+  cloud_destroy
+    destroy a running machine in the cloud_server
+      call machine.cloud_server reboot
+  max_lifetime_expired
+    check if machine lifetime is expired
+      With 23hours machine live a day
+      With 0hours machine doesnt expire
+  must_destroy?
+    check machine lifetime and machine idletime
+      is false when max_liteftime and max_idletime are false
+      is false if doesnt belongs to any user
+      is true when max idletime is expired
+      is true when max lifetime is expired
+  reboot
+    call machine.cloud_server reboot
+  cloud_create
+    launch a machine in the cloud server
+      call machine.cloud_server.create_server
+  pause
+    call machine.cloud_server pause
+  max_idletime_expired
+    check if machine idletime is expired
+      With 23hours machine live a day from last user sign_in
+      With 0hours machine doesnt expire
+  launch
+    return two images
+
+CloudServer
+  should have many images
+  unpause
+    unpauses a running machine in the cloud server
+  pause
+    pauses a runnning machine in a cloud server
+  destroy_server
+    destroys a running machine of the cloud server
+  create_server
+    create a new server in the cloud
+  .machines
+    returns machines of the cloud server
+  .flavors
+    returns flavors of the cloud server
+  reboot
+    reboots a running machine of the cloud server
+
+ImagesController
+  routing
+    routes to #edit
+    routes to #show
+    routes to #update
+    routes to #create
+    routes to #index
+    routes to #new
+    routes to #destroy
+
+CloudServersController
+  routing
+    routes to #edit
+    routes to #show
+    routes to #update
+    routes to #create
+    routes to #index
+    routes to #new
+    routes to #destroy
+
+User
+  should require first_name to be set
+  should require last_name to be set
+  .toggle_approved!
+    toggle approved value
+  .aprove!
+    sets aproved property to true
+  .max_lifetime
+    returns max lifetime of all groups of a user
+    returns 0 if anyone is 0
+    returns -1 if no rol assigned to user
+  #admins
+    returns admin users
+  .admin?
+    user is not admin by default
+    true if has admin role
+  set_default_group
+    is in default group after create
+  .max_idletime
+    returns max idletime of all groups of a user
+    returns 0 if anyone is 0
+    returns -1 if no rol assigned to user
+  .images_available
+    returns images available for the user
+
+RolesController
+  login as an admin
+    .edit
+      returns http success
+      renders the edit view
+    .update
+      returns http success
+      updates the rol name
+    .destroy
+      destroy a Role
+    .create
+      creates a new Role
+      assigns a new Role
+    .new
+      returns http success
+      renders the new view
+  login as an user
+    can not get /edit
+    can not put /update
+    can not destroy a rol
+    can not post /create
+    can not get /new
+
+Image
+  should have and belong to many roles
+  should require description to be set
+  should require machine to be set
+  should only allow numeric, integer, integer values for number_of_instances
+  should require number_of_instances to be set
+  should require flavor to be set
+  should require name to be set
+  should require cloud_server to be set
+  should belong to cloud_server
+  #prelaunch
+    launchs machines for all images
+
+ImagesController
+  as an admin
+    GET edit
+      assigns the requested image as @image
+    GET new
+      assigns a new image as @image
+    PUT update
+      with valid params
+        updates the requested image
+        assigns the requested image as @image
+        redirects to the images list
+      with invalid params
+        assigns the image as @image
+        re-renders the 'edit' template
+    post create
+      with valid params
+        creates a new image
+        assigns a newly created image as @image
+        redirects to the created image
+      with invalid params
+        assigns a newly created but unsaved image as @image
+        re-renders the 'new' template
+    get show
+      assign the image to @image
+    get index
+      assigns all images as @images
+    DELETE destroy
+      destroys the requested image
+      redirects to the images list
+  as an user
+    GET new
+      get an unauthorized error
+    GET edit
+      get an unauthorized error
+    POST create
+      get an unauthorized error
+    GET index
+      get an unauthorized error
+    get show
+      assign the image to @image
+
+WelcomeController
+  User logged
+    .index
+      returns http success
+      assigns all available images to @available_images
+  User not logged
+    .index
+      returns http success
+
+CloudServersController
+  logged as an admin
+    GET edit
+      assigns the requested cloud_server as @cloud_server
+    GET new
+      assigns a new cloud_server as @cloud_server
+    PUT update
+      with valid params
+        updates the requested cloud_server
+        assigns the requested cloud_server as @cloud_server
+        redirects to the cloud_server
+      with invalid params
+        assigns the cloud_server as @cloud_server
+        re-renders the 'edit' template
+    POST create
+      with valid params
+        creates a new CloudServer
+        assigns a newly created cloud_server as @cloud_server
+        redirects to the created cloud_server
+      with invalid params
+        assigns a newly created but unsaved cloud_server as @cloud_server
+        re-renders the 'new' template
+    GET index
+      assigns all cloud_servers as @cloud_servers
+    GET show
+      assigns the requested cloud_server as @cloud_server
+    DELETE destroy
+      destroys the requested cloud_server
+      redirects to the cloud_servers list
+  logged as an user
+    GET new
+      get an unauthorized error
+    GET edit
+      get an unauthorized error
+    POST create
+      get an unauthorized error
+    GET show
+      get an unauthorized error
+    GET index
+      get an unauthorized error
+
+AdministrationController
+  login as an admin
+    GET 'list_groups'
+      returns http success
+      renders the list_group view
+      have all the groupss
+    PUT 'update_user'
+      returns http success
+      changes @user's attributes
+      fails with blank first name
+    PUT 'toggle_approved_user'
+      redirects to administration user_list
+      It toggles approved user property
+    POST 'check_file'
+      can upload a CSV file
+      can't upload a CSV file if no file provided
+    GET 'upload_csv'
+      get 'upload_csv'
+    DELETE 'delete_user'
+      delete an user
+      can't delete las admin user
+    GET 'users_from_group'
+      returns http success
+      renders the users_from_group view
+      have all the users
+    GET 'edit_user'
+      returns http success
+    GET 'create_users'
+      create users from temp file
+        with file in session goes OK
+        fails without temp file in session
+    GET 'list_users'
+      returns http success
+      renders the list_users view
+      have all the users
+  login as an user
+    PUT 'update_user'
+      doesn't return http success
+    DELETE 'delete_user'
+      can't delete an user
+    GET 'upload_csv'
+      doesn't return http success
+    GET 'edit_user'
+      doesn't return http success
+    GET 'list_users'
+      doesn't return http success
+
+@cloud
+  .getflavor
+    returns the id of a flavor
+    returns the id of a flavor
+  .getimage
+    returns the id of an image
+  .associate_ip_to_server
+    returns the new floating ip of the server
+  .reboot
+    reboot a server
+  .pause
+    pause server
+  .unpause
+    unpause server
+  .images
+    returns all the images
+  .create_server
+    create a server
+  .flavors
+    returns all the flavors
+
+Finished in 11.44 seconds
+173 examples, 0 failures
+
+Randomized with seed 52551
+

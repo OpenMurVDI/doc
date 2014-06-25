@@ -1,0 +1,8 @@
+http://docs.fedoraproject.org/en-US/Fedora/12/html/Virtualization_Guide/chap-Virtualization_Guide-KVM_Para_virtualized_Drivers.html
+http://www.windowsservercatalog.com/item.aspx?idItem=5c52eb93-c28f-8c00-60fb-352171a1f5f5&bCatID=1282
+http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/images/bin/
+http://www.sismonda.com.ar/166-2012-11-20-virtualizacion-en-ubuntu-12-04-con-kvm-
+http://www.gonzalomarcote.com/2011/instalar-un-guest-windows-en-kvm-con-virtio-drivers/
+https://doc.fmsistemas.com/servidores:virtualizacion:kvm
+http://blog.jorgeivanmeza.com/2010/01/configurando-un-puente-en-la-interfaz-de-red-para-las-kvm-en-linux-ubuntu-9-10/
+https://bbs.archlinux.org/viewtopic.php?id=137326

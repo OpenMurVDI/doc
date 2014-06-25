@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Cloud - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/cloud.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Anticipate</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-associate_ip_to_server">#associate_ip_to_server</a>
+    
+    <li><a href="#method-i-create_server">#create_server</a>
+    
+    <li><a href="#method-i-destroy_server-21">#destroy_server!</a>
+    
+    <li><a href="#method-i-flavors">#flavors</a>
+    
+    <li><a href="#method-i-getflavor">#getflavor</a>
+    
+    <li><a href="#method-i-getimage">#getimage</a>
+    
+    <li><a href="#method-i-getserver">#getserver</a>
+    
+    <li><a href="#method-i-images">#images</a>
+    
+    <li><a href="#method-i-ip">#ip</a>
+    
+    <li><a href="#method-i-pause">#pause</a>
+    
+    <li><a href="#method-i-reboot-21">#reboot!</a>
+    
+    <li><a href="#method-i-server">#server</a>
+    
+    <li><a href="#method-i-servers">#servers</a>
+    
+    <li><a href="#method-i-unpause">#unpause</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AdministrationController.html">AdministrationController</a>
+  
+    <li><a href="./AdministrationControllerPolicy.html">AdministrationControllerPolicy</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ApplicationPolicy.html">ApplicationPolicy</a>
+  
+    <li><a href="./Cloud.html">Cloud</a>
+  
+    <li><a href="./CloudServer.html">CloudServer</a>
+  
+    <li><a href="./CloudServerPolicy.html">CloudServerPolicy</a>
+  
+    <li><a href="./CloudServersController.html">CloudServersController</a>
+  
+    <li><a href="./Image.html">Image</a>
+  
+    <li><a href="./ImagePolicy.html">ImagePolicy</a>
+  
+    <li><a href="./ImagesController.html">ImagesController</a>
+  
+    <li><a href="./Machine.html">Machine</a>
+  
+    <li><a href="./MachinePolicy.html">MachinePolicy</a>
+  
+    <li><a href="./MachinesController.html">MachinesController</a>
+  
+    <li><a href="./Role.html">Role</a>
+  
+    <li><a href="./RolePolicy.html">RolePolicy</a>
+  
+    <li><a href="./RolesController.html">RolesController</a>
+  
+    <li><a href="./StartMachine.html">StartMachine</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserPolicy.html">UserPolicy</a>
+  
+    <li><a href="./WelcomeController.html">WelcomeController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cloud</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-os" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">os</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@os</span> = <span class="ruby-constant">OpenStack</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">params</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-associate_ip_to_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">associate_ip_to_server</span><span
+            class="method-args">(server)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="associate_ip_to_server-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">associate_ip_to_server</span>(<span class="ruby-identifier">server</span>)
+  <span class="ruby-identifier">addr</span> = <span class="ruby-identifier">os</span>.<span class="ruby-identifier">create_floating_ip</span>
+  <span class="ruby-identifier">sleeping</span>(<span class="ruby-value">5</span>).<span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">between_tries</span>.<span class="ruby-identifier">failing_after</span>(<span class="ruby-value">10</span>).<span class="ruby-identifier">tries</span> {
+    <span class="ruby-identifier">os</span>.<span class="ruby-identifier">attach_floating_ip</span>({<span class="ruby-value">:server_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">id</span> , <span class="ruby-value">:ip_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">id</span> })
+  }
+  <span class="ruby-identifier">addr</span>.<span class="ruby-identifier">ip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- associate_ip_to_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- associate_ip_to_server-method -->
+
+    
+      <div id="method-i-create_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_server</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_server-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_server</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">user_data</span> =  <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-node">&quot;#cloud-config\npassword: #{args[:password]}\nchpasswd: { expire: False }\nssh_pwauth: True\n&quot;</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">create_server</span>(<span class="ruby-value">:name</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">:name</span>], <span class="ruby-value">:imageRef</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">getimage</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:image</span>]), <span class="ruby-value">:flavorRef</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">getflavor</span>(<span class="ruby-identifier">args</span>[<span class="ruby-value">:flavor</span>]), <span class="ruby-value">:user_data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_server-method -->
+
+    
+      <div id="method-i-destroy_server-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_server!</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_server-21-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_server!</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">server</span>(<span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">name</span>)).<span class="ruby-identifier">delete!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy_server-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy_server-21-method -->
+
+    
+      <div id="method-i-flavors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flavors</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="flavors-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flavors</span>
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">flavors</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flavors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flavors-method -->
+
+    
+      <div id="method-i-getflavor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getflavor</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getflavor-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getflavor</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">flavors</span>[<span class="ruby-identifier">flavors</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }][<span class="ruby-value">:id</span>] 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getflavor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getflavor-method -->
+
+    
+      <div id="method-i-getimage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getimage</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getimage-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getimage</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">images</span>[<span class="ruby-identifier">images</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }][<span class="ruby-value">:id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getimage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getimage-method -->
+
+    
+      <div id="method-i-getserver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getserver</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getserver-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">servers</span>[<span class="ruby-identifier">servers</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }][<span class="ruby-value">:id</span>]  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getserver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getserver-method -->
+
+    
+      <div id="method-i-images" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">images</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="images-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">images</span>
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">images</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- images-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- images-method -->
+
+    
+      <div id="method-i-ip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ip</span><span
+            class="method-args">(server_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ip-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ip</span>(<span class="ruby-identifier">server_name</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">server</span>(<span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">server_name</span>)).<span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">address</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ip-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ip-method -->
+
+    
+      <div id="method-i-pause" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pause</span><span
+            class="method-args">(server_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pause-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pause</span>(<span class="ruby-identifier">server_name</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">server</span>(<span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">server_name</span>)).<span class="ruby-identifier">pause</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pause-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pause-method -->
+
+    
+      <div id="method-i-reboot-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reboot!</span><span
+            class="method-args">(server_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reboot-21-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reboot!</span>(<span class="ruby-identifier">server_name</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">server</span>(<span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">server_name</span>)).<span class="ruby-identifier">reboot</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reboot-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reboot-21-method -->
+
+    
+      <div id="method-i-server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">server</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="server-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">server</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">server</span>(<span class="ruby-identifier">id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- server-method -->
+
+    
+      <div id="method-i-servers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">servers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="servers-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">servers</span>
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">servers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- servers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- servers-method -->
+
+    
+      <div id="method-i-unpause" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unpause</span><span
+            class="method-args">(server_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unpause-source">
+            <pre><span class="ruby-comment"># File app/models/cloud.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unpause</span>(<span class="ruby-identifier">server_name</span>)
+  <span class="ruby-identifier">os</span>.<span class="ruby-identifier">server</span>(<span class="ruby-identifier">getserver</span>(<span class="ruby-identifier">server_name</span>)).<span class="ruby-identifier">unpause</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unpause-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unpause-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
