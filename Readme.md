@@ -11,6 +11,9 @@ Para su mayor difusión y reutilización se libera:
 
 Aquí se puede encontrar todas las producciones del proyecto inicial. 
 
+Proyecto cofinanciado:
+
+![Proyecto financiado por](logo.png)
+
 Pero, debido al gran interés suscitado al finalizar el proyecto y para mantener vivos los trabajos realizados, se plantea una línea de continuidad para crear nuevas versiones, modificaciones y documentaciones posteriores. Todas las producciones que se pudieran realizar con posterioridad se podrán encontrar también de forma libre en https://github.com/StackVDI
 
-![Fondo social europeo](http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0023/9559/brand.gif)
